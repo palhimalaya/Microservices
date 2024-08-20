@@ -1,0 +1,32 @@
+<!-- app/views/orders/index.html.erb -->
+<h1>Place an Order</h1>
+
+<%= form_with model: Order.new, url: orders_path, method: :post do |f| %>
+  <div>
+    <%= f.label :customer_name %>
+    <%= f.text_field :customer_name %>
+  </div>
+  <div>
+    <%= f.label :product_id %>
+    <%= f.number_field :product_id %>
+  </div>
+  <div>
+    <%= f.label :quantity %>
+    <%= f.number_field :quantity %>
+  </div>
+  <div>
+    <%= f.label :address %>
+    <%= f.text_field :address %>
+  </div>
+  <div>
+    <%= f.submit 'Place Order' %>
+  </div>
+<% end %>
+
+<% if notice %>
+  <p><%= notice %></p>
+<% end %>
+
+<% if alert %>
+  <p><%= alert %></p>
+<% end %>

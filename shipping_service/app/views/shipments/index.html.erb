@@ -1,0 +1,8 @@
+<!-- app/views/shipments/index.html.erb -->
+<h1>Shipments</h1>
+
+<div id="shipments">
+  <% @shipments.each do |shipment| %>
+    <%= render partial: 'shipment', locals: { shipment: shipment } %>
+  <% end %>
+</div>
